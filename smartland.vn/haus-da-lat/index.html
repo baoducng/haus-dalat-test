@@ -59,6 +59,16 @@
    'https://connect.facebook.net/en_US/fbevents.js');
    fbq('init', '3516449231981652');
    fbq('track', 'PageView');
+   document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll(".leadButton").forEach(function(button) {
+        button.addEventListener("click", function() {
+            if (typeof fbq === "function") {
+                fbq('track', 'Lead');
+                console.log("Meta Pixel 'Lead' event triggered.");
+            }
+        });
+    });
+   });
    </script>
    <noscript><img height="1" width="1" style="display:none"
    src="https://www.facebook.com/tr?id=3516449231981652&ev=PageView&noscript=1"
@@ -158,7 +168,7 @@ form > button {
                <span class="relative inline-flex rounded-full w-[12px] h-[12px] bg-red-600"></span>
             </span>
             <div class="font-medium">Nhận báo giá các sản phẩm và rổ hàng căn đẹp nhất dự án</div>
-            <a class="animate-zoom bg-red-600 text-white font-semibold pt-[3px] pb-[1px] px-[20px] rounded-[30px] ms-[5px]" 
+            <a class="animate-zoom bg-red-600 text-white font-semibold pt-[3px] pb-[1px] px-[20px] rounded-[30px] ms-[5px] leadButton" 
                href="https://smartland.vn/form-dang-ky/haus-da-lat-nhan-bao-gia/?ladi=https://smartland.vn/haus-da-lat/?utm_source=fb&amp;utm_medium=%5BHaus+DL%5D+%3D+mess+CTW&amp;utm_campaign=T2&amp;utm_content=%F0%9F%8E%89%F0%9F%8E%89Chuy%C3%AAn+gia+%C4%90%E1%BA%B7ng+Qu%E1%BB%91c+Vi%E1%BB%87t%2C+T%E1%BB%95ng+Gi%C3%A1m+%C4%91%E1%BB%91c+Smartland+ch%C3%ADnh+th%E1%BB%A9c+tham+gia+ph%C3%A2n+ph%E1%BB%91i+%C4%91%E1%BB%99c+quy%E1%BB%81n+d%E1%BB%B1+%C3%A1n+Haus+Da+Lat+t%E1%BA%A1i+Vi%E1%BB%87t+Nam&amp;fbclid=IwZXh0bgNhZW0BMABhZGlkAasY3KQpRt8BHUxtSrUqeWd7bvwV6yzZ9Y6yNtXGox-yi67WtMPbCNWQTxWRJYGWf_8j8g_aem_HahxlO3ElS_LkJw-vHQeqw" target="_blank">ĐĂNG KÝ NGAY</a>
          </div>
       </div>
@@ -248,11 +258,11 @@ form > button {
          <h2 class="md:text-2xl text-xl text-white text-center font-[600] mb-2">ĐỂ TIẾT KIỆM THỜI GIAN TÌM HIỂU DỰ ÁN HAUS ĐÀ LẠT</h2>
          <p class="md:text-xl text-lg text-white text-center mb-5">ĐẶC BIỆT, ƯU TIÊN CHỌN CĂN ĐẸP VÀ GIÁ TỐT NHẤT CHO KHÁCH HÀNG ĐẮNG KÝ SỚM!</p>
          <div class="flex lg:flex-row flex-col items-center justify-between w-full bg-thirt rounded-lg text-primary px-6 py-4">
-            <div class="flex-1 text-md lg:mb-0 mb-4 text-center">
+            <div class="flex-1 text-md lg:mb-0 mb-4 text-center leadButton">
                <p>Đăng ký ngay để nhận bảng giá + ưu đãi đợt đầu tiên!</p>
             </div>
             <div class="lg:w-[230px] w-full lg:text-right text-center">
-               <a class="bg-red-500 hover:bg-red-600 text-white px-10 py-2 rounded-lg drop-shadow-lg" href="https://smartland.vn/form-dang-ky/haus-da-lat-nhan-bao-gia/?ladi=https://smartland.vn/haus-da-lat/?utm_source=fb&amp;utm_medium=%5BHaus+DL%5D+%3D+mess+CTW&amp;utm_campaign=T2&amp;utm_content=%F0%9F%8E%89%F0%9F%8E%89Chuy%C3%AAn+gia+%C4%90%E1%BA%B7ng+Qu%E1%BB%91c+Vi%E1%BB%87t%2C+T%E1%BB%95ng+Gi%C3%A1m+%C4%91%E1%BB%91c+Smartland+ch%C3%ADnh+th%E1%BB%A9c+tham+gia+ph%C3%A2n+ph%E1%BB%91i+%C4%91%E1%BB%99c+quy%E1%BB%81n+d%E1%BB%B1+%C3%A1n+Haus+Da+Lat+t%E1%BA%A1i+Vi%E1%BB%87t+Nam&amp;fbclid=IwZXh0bgNhZW0BMABhZGlkAasY3KQpRt8BHUxtSrUqeWd7bvwV6yzZ9Y6yNtXGox-yi67WtMPbCNWQTxWRJYGWf_8j8g_aem_HahxlO3ElS_LkJw-vHQeqw" target="_blank">ĐĂNG KÝ NGAY</a>
+               <a class="bg-red-500 hover:bg-red-600 text-white px-10 py-2 rounded-lg drop-shadow-lg leadButton" href="https://smartland.vn/form-dang-ky/haus-da-lat-nhan-bao-gia/?ladi=https://smartland.vn/haus-da-lat/?utm_source=fb&amp;utm_medium=%5BHaus+DL%5D+%3D+mess+CTW&amp;utm_campaign=T2&amp;utm_content=%F0%9F%8E%89%F0%9F%8E%89Chuy%C3%AAn+gia+%C4%90%E1%BA%B7ng+Qu%E1%BB%91c+Vi%E1%BB%87t%2C+T%E1%BB%95ng+Gi%C3%A1m+%C4%91%E1%BB%91c+Smartland+ch%C3%ADnh+th%E1%BB%A9c+tham+gia+ph%C3%A2n+ph%E1%BB%91i+%C4%91%E1%BB%99c+quy%E1%BB%81n+d%E1%BB%B1+%C3%A1n+Haus+Da+Lat+t%E1%BA%A1i+Vi%E1%BB%87t+Nam&amp;fbclid=IwZXh0bgNhZW0BMABhZGlkAasY3KQpRt8BHUxtSrUqeWd7bvwV6yzZ9Y6yNtXGox-yi67WtMPbCNWQTxWRJYGWf_8j8g_aem_HahxlO3ElS_LkJw-vHQeqw" target="_blank">ĐĂNG KÝ NGAY</a>
             </div>
          </div>
       </div>
@@ -379,7 +389,7 @@ form > button {
                <p>Đăng ký ngay để nhận bảng giá + ưu đãi đợt đầu tiên!</p>
             </div>
             <div class="lg:w-[230px] w-full lg:text-right text-center">
-               <a class="bg-red-500 hover:bg-red-600 text-white px-10 py-2 rounded-lg drop-shadow-lg" href="https://smartland.vn/form-dang-ky/haus-da-lat-nhan-bao-gia/?ladi=https://smartland.vn/haus-da-lat/?utm_source=fb&amp;utm_medium=%5BHaus+DL%5D+%3D+mess+CTW&amp;utm_campaign=T2&amp;utm_content=%F0%9F%8E%89%F0%9F%8E%89Chuy%C3%AAn+gia+%C4%90%E1%BA%B7ng+Qu%E1%BB%91c+Vi%E1%BB%87t%2C+T%E1%BB%95ng+Gi%C3%A1m+%C4%91%E1%BB%91c+Smartland+ch%C3%ADnh+th%E1%BB%A9c+tham+gia+ph%C3%A2n+ph%E1%BB%91i+%C4%91%E1%BB%99c+quy%E1%BB%81n+d%E1%BB%B1+%C3%A1n+Haus+Da+Lat+t%E1%BA%A1i+Vi%E1%BB%87t+Nam&amp;fbclid=IwZXh0bgNhZW0BMABhZGlkAasY3KQpRt8BHUxtSrUqeWd7bvwV6yzZ9Y6yNtXGox-yi67WtMPbCNWQTxWRJYGWf_8j8g_aem_HahxlO3ElS_LkJw-vHQeqw" target="_blank">ĐĂNG KÝ NGAY</a>
+               <a class="bg-red-500 hover:bg-red-600 text-white px-10 py-2 rounded-lg drop-shadow-lg leadButton" href="https://smartland.vn/form-dang-ky/haus-da-lat-nhan-bao-gia/?ladi=https://smartland.vn/haus-da-lat/?utm_source=fb&amp;utm_medium=%5BHaus+DL%5D+%3D+mess+CTW&amp;utm_campaign=T2&amp;utm_content=%F0%9F%8E%89%F0%9F%8E%89Chuy%C3%AAn+gia+%C4%90%E1%BA%B7ng+Qu%E1%BB%91c+Vi%E1%BB%87t%2C+T%E1%BB%95ng+Gi%C3%A1m+%C4%91%E1%BB%91c+Smartland+ch%C3%ADnh+th%E1%BB%A9c+tham+gia+ph%C3%A2n+ph%E1%BB%91i+%C4%91%E1%BB%99c+quy%E1%BB%81n+d%E1%BB%B1+%C3%A1n+Haus+Da+Lat+t%E1%BA%A1i+Vi%E1%BB%87t+Nam&amp;fbclid=IwZXh0bgNhZW0BMABhZGlkAasY3KQpRt8BHUxtSrUqeWd7bvwV6yzZ9Y6yNtXGox-yi67WtMPbCNWQTxWRJYGWf_8j8g_aem_HahxlO3ElS_LkJw-vHQeqw" target="_blank">ĐĂNG KÝ NGAY</a>
             </div>
          </div>
       </div>
