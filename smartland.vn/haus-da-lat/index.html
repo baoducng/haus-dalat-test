@@ -47,6 +47,8 @@
        a.appendChild(r);
    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
+
+
 <!-- Meta Pixel Code -->
 <script>
    !function(f,b,e,v,n,t,s)
@@ -57,23 +59,42 @@
    t.src=v;s=b.getElementsByTagName(e)[0];
    s.parentNode.insertBefore(t,s)}(window, document,'script',
    'https://connect.facebook.net/en_US/fbevents.js');
+   
+   // Initialize pixel
    fbq('init', '3516449231981652');
+   
+   // Track PageView
    fbq('track', 'PageView');
+   
+   // Track Lead events on button clicks
    document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll(".leadButton").forEach(function(button) {
-        button.addEventListener("click", function() {
-            if (typeof fbq === "function") {
-                fbq('track', 'Lead');
-                console.log("Meta Pixel 'Lead' event triggered.");
-            }
-        });
-    });
+       // Select all elements with leadButton class
+       var leadButtons = document.querySelectorAll(".leadButton");
+       
+       leadButtons.forEach(function(button) {
+           button.addEventListener("click", function(e) {
+               // Track Lead event
+               fbq('track', 'Lead');
+               console.log("Lead event triggered");
+           });
+       });
+   
+       // Track form submissions
+       var form = document.querySelector("form");
+       if (form) {
+           form.addEventListener("submit", function(e) {
+               fbq('track', 'Lead');
+               console.log("Form submission Lead event triggered");
+           });
+       }
    });
    </script>
-   <noscript><img height="1" width="1" style="display:none"
-   src="https://www.facebook.com/tr?id=3516449231981652&ev=PageView&noscript=1"
-   /></noscript>
-<!-- End Meta Pixel Code -->
+   <noscript>
+       <img height="1" width="1" style="display:none"
+       src="https://www.facebook.com/tr?id=3516449231981652&ev=PageView&noscript=1"/>
+   </noscript>
+   <!-- End Meta Pixel Code -->
+
 <script type="text/javascript">
 tailwind.config = {
    theme: {
