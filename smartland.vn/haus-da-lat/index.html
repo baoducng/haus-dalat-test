@@ -60,33 +60,37 @@
    s.parentNode.insertBefore(t,s)}(window, document,'script',
    'https://connect.facebook.net/en_US/fbevents.js');
    
-   // Initialize pixel
-   fbq('init', '3516449231981652');
-   
-   // Track PageView
-   fbq('track', 'PageView');
    
    // Track Lead events on button clicks
    document.addEventListener("DOMContentLoaded", function() {
+       // Initialize pixel
+       fbq('init', '3516449231981652');
+         
+       // Track PageView
+       fbq('track', 'PageView');
        // Select all elements with leadButton class
        var leadButtons = document.querySelectorAll(".leadButton");
+
+       // Chờ 1 giây trước khi gán sự kiện để chắc chắn Pixel đã sẵn sàng
+    setTimeout(() => {
+        var leadButtons = document.querySelectorAll(".leadButton");
+        leadButtons.forEach(button => {
+            button.addEventListener("click", function() {
+                fbq('track', 'Lead');
+                console.log("Lead event triggered");
+            });
+        });
+
+        var form = document.querySelector("form");
+        if (form) {
+            form.addEventListener("submit", function() {
+                fbq('track', 'Lead');
+                console.log("Form submission Lead event triggered");
+            });
+        }
+    }, 500);
        
-       leadButtons.forEach(function(button) {
-           button.addEventListener("click", function(e) {
-               // Track Lead event
-               fbq('track', 'Lead');
-               console.log("Lead event triggered");
-           });
-       });
-   
-       // Track form submissions
-       var form = document.querySelector("form");
-       if (form) {
-           form.addEventListener("submit", function(e) {
-               fbq('track', 'Lead');
-               console.log("Form submission Lead event triggered");
-           });
-       }
+       
    });
    </script>
    <noscript>
