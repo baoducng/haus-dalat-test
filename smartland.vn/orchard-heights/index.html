@@ -186,6 +186,35 @@ form > button {
       <p class="font-icie mt-16 -mb-7">Không gian</p>
       <p class="text-[1.4em] font-[600]"> Sống trọn chất phiêu lưu</p>
       <p>TẠI THÀNH PHỐ MỚI BÌNH DƯƠNG</p>
+      <div class="flex flex-col items-center justify-center bg-thirt p-6 rounded-lg shadow-lg mt-6">
+         <h2 class="text-primary font-orchardheights text-3xl font-bold mb-4">Đừng bỏ lỡ cơ hội để nhận ưu đãi tốt nhất là chọn căn như ý</h2>
+         <div id="countdown" class="flex space-x-4 text-center text-white text-2xl font-semibold">
+             <div class="bg-primary px-6 py-3 rounded-lg">
+                 <span id="days">00</span>
+                 <p class="text-sm">Ngày</p>
+             </div>
+             <div class="bg-second px-6 py-3 rounded-lg">
+                 <span id="hours">00</span>
+                 <p class="text-sm">Giờ</p>
+             </div>
+             <div class="bg-primary px-6 py-3 rounded-lg">
+                 <span id="minutes">00</span>
+                 <p class="text-sm">Phút</p>
+             </div>
+             <div class="bg-second px-6 py-3 rounded-lg">
+                 <span id="seconds">00</span>
+                 <p class="text-sm">Giây</p>
+             </div>
+         </div>
+     </div>
+      <form class="mt-6 space-y-4">
+         <input type="text" placeholder="Họ và tên" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+         <input type="tel" placeholder="Số điện thoại" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+         <button type="submit" class="w-full bg-primary text-white py-3 rounded-md font-semibold hover:bg-red-700 transition">
+            Nhận thông tin
+         </button>
+         <p class="text-sm text-gray-600 text-center mt-2">*Mọi thông tin của quý khách sẽ được bảo mật</p>
+      </form>
    </div>
 
    <img class="object-cover object-center h-auto w-full lg:w-1/3" 
@@ -701,6 +730,26 @@ form > button {
          document.getElementById('modal').classList.add('hidden');
       }
    });
+   function updateCountdown() {
+        const countdownDate = new Date("Feb 22, 2025 00:00:00").getTime();
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        if (distance <= 0) {
+            document.getElementById("countdown-text").innerText = "ưu đãi đã kết thúc!";
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        document.getElementById("countdown-text").innerText = `${days} ngày ${hours} giờ ${minutes} phút`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  
 </script>
 </body>
 
