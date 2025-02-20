@@ -137,6 +137,7 @@ form > button {
    @apply right-[5px] !important;
    @apply bottom-[65px] !important; }
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body data-rsssl=1 class="font-poppins bg-slate-100 text-[#424242] text-[16px] !leading-[1.5em]">
 <div id="gallery" class="fixed w-full h-full top-0 left-0 flex items-center justify-center bg-black/80 hidden z-[10]">
@@ -195,12 +196,7 @@ form > button {
              💥 Chỉ còn <span id="countdown-text" class="text-primary"></span> để chọn căn hộ đẹp nhất!
          </p>
      </div>
-     <div class="bg-second text-white text-center py-3 px-6 rounded-lg shadow-lg flex items-center justify-center space-x-3 animate-pulse">
-      <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0a3 3 0 11-6 0" />
-      </svg>
-      <p class="text-lg font-semibold">Hơn <span class="font-bold">60</span> khách hàng đã booking trong tuần qua!</p>
-  </div>
+   
      
       <form class="mt-6 space-y-4">
          <input type="text" placeholder="Họ và tên" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
@@ -210,16 +206,67 @@ form > button {
          </button>
          <p class="text-sm text-gray-600 text-center mt-2">*Mọi thông tin của quý khách sẽ được bảo mật</p>
       </form>
+
+
+      <div class="flex flex-col items-center justify-center text-center bg-white p-6 rounded-lg shadow-lg">
+         <p class="text-primary text-lg font-semibold">Được công nhận là</p>
+         <h2 class="text-3xl font-bold text-primary">Nhà phát triển 5 sao</h2>
+         
+         <!-- Font Awesome Stars -->
+         <div class="flex space-x-1 mt-2 text-second">
+             <i class="fa-solid fa-star text-3xl"></i>
+             <i class="fa-solid fa-star text-3xl"></i>
+             <i class="fa-solid fa-star text-3xl"></i>
+             <i class="fa-solid fa-star text-3xl"></i>
+             <i class="fa-solid fa-star text-3xl"></i>
+         </div>
+     
+         <p class="text-gray-600 text-sm mt-2">CapitaLand - Nhà phát triển bất động sản hàng đầu châu Á</p>
+     </div>
+     <div class="flex flex-col items-center justify-center text-center bg-white p-6 rounded-lg shadow-lg">
+         <p class="text-primary text-lg font-semibold">Smartland </p>
+         <!-- Font Awesome Stars -->
+         <div class="flex space-x-1 mt-2 text-second">
+            <i class="fa-solid fa-star text-3xl"></i>
+            <i class="fa-solid fa-star text-3xl"></i>
+            <i class="fa-solid fa-star text-3xl"></i>
+            <i class="fa-solid fa-star text-3xl"></i>
+            <i class="fa-solid fa-star text-3xl"></i>
+         </div>
+         <p class="text-gray-600 text-sm mt-2">Đại lý kinh doanh top 1</p>
+      </div>
+
+     <div class="flex flex-col items-center justify-center text-center bg-white p-6 rounded-lg shadow-lg">
+         <p class="text-primary text-lg font-semibold">Dự án có tiềm năng sinh lời cao</p>
+         <!-- Font Awesome Stars -->
+         <div class="flex space-x-1 mt-2 text-second">
+            <i class="fa-solid fa-star text-3xl"></i>
+            <i class="fa-solid fa-star text-3xl"></i>
+            <i class="fa-solid fa-star text-3xl"></i>
+            <i class="fa-solid fa-star text-3xl"></i>
+            <i class="fa-solid fa-star text-3xl"></i>
+         </div>
+         <p class="text-gray-600 text-sm mt-2">Dự án có tiềm năng sinh lời cao, được các chuyên gia đánh giá 5 sao</p>
+      </div>
    </div>
 
-
-   <div class="object-cover object-center h-auto w-full lg:w-1/3">
+   <div class="relative object-cover object-center h-auto w-full lg:w-1/3">
+      <!-- Image -->
       <img class="" 
-         alt="Orchard Heights" 
-         src="https://i.postimg.cc/xCjQVp1s/Screenshot-2025-02-19-at-19-13-29.png" 
-         srcset="https://i.postimg.cc/xCjQVp1s/Screenshot-2025-02-19-at-19-13-29.png" 
-         decoding="async" fetchpriority="high" />
-   </div>
+          alt="Orchard Heights" 
+          src="https://i.postimg.cc/xCjQVp1s/Screenshot-2025-02-19-at-19-13-29.png" 
+          srcset="https://i.postimg.cc/xCjQVp1s/Screenshot-2025-02-19-at-19-13-29.png" 
+          decoding="async" fetchpriority="high" />
+      
+      <!-- Booking Badge -->
+      <div class="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+         bg-primary text-white font-semibold px-[20px] py-[6px] rounded-[30px] shadow-lg 
+         w-max flex items-center justify-center text-center 
+         animate-bounce-custom">
+               Hơn <span class="font-bold mx-1">60</span> khách đã booking trong tuần qua!
+      </div>
+  </div>   
+
 
    </div>
 </div>
